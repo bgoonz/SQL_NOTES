@@ -54,3 +54,17 @@ SELECT * FROM film;
 
 
 
+**SELECT**
+
+```sql
+SELECT column_name FROM table_name;
+```
+
+example:
+
+```sql
+SELECT description FROM film;
+```
+
+
+![Select description FROM film;](2023-05-25-13-22-48.png)
