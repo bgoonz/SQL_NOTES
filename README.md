@@ -78,3 +78,8 @@ SELECT column_name, column_name FROM table_name;
 
 ![Select Multiple Columns](2023-05-25-13-44-01.png)
 
+
+
+**How to view list of tables in your database in PGAdmin**
+
+![View Tables In Database](2023-05-25-13-46-32.png)
