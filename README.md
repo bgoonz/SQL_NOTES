@@ -18,6 +18,11 @@
 
 ### PostgreSQL & PGAdmin
 
+- [PSQL Documentation](https://www.postgresql.org/docs/)
+
+**SQL Cheat Sheet:**
+- [Cheat Sheet](./sql-cheat-sheet.png)
+
 - what PG Admin Looks Like:
 ![PG Admin Interface](2023-05-25-13-01-24.png)
 
@@ -33,3 +38,10 @@
 ```sql
 SELECT * FROM film;
 ```
+
+
+---
+
+### SQL Commands:
+
+
