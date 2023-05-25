@@ -15,23 +15,19 @@
 
 ---
 
-
 ### PostgreSQL & PGAdmin
 
 - [PSQL Documentation](https://www.postgresql.org/docs/)
 
 **SQL Cheat Sheet:**
-- [Cheat Sheet](./sql-cheat-sheet.png)
+![Cheat Sheet](./sql-cheat-sheet.png)
 
 - what PG Admin Looks Like:
-![PG Admin Interface](2023-05-25-13-01-24.png)
-
-
+  ![PG Admin Interface](2023-05-25-13-01-24.png)
 
 **Once you have restored the provided .tar file database, you can right click and use the querry tool to query it.**
 
 ![Select All Query In PgAdmin](2023-05-25-13-08-27.png)
-
 
 **Querry Entire Table**
 
@@ -39,9 +35,6 @@
 SELECT * FROM film;
 ```
 
-
 ---
 
 ### SQL Commands:
-
-
