@@ -52,8 +52,6 @@ SELECT * FROM film;
 - `PRIMARY KEY` - used to define a column as a primary key
 - `FOREIGN KEY` - used to define a column as a foreign key
 
-
-
 **SELECT**
 
 ```sql
@@ -66,9 +64,7 @@ example:
 SELECT description FROM film;
 ```
 
-
 ![Select description FROM film;](2023-05-25-13-22-48.png)
-
 
 **If you want multiple rows from a table you can use a comma to separate the column names**
 
@@ -78,8 +74,15 @@ SELECT column_name, column_name FROM table_name;
 
 ![Select Multiple Columns](2023-05-25-13-44-01.png)
 
-
-
 **How to view list of tables in your database in PGAdmin**
 
 ![View Tables In Database](2023-05-25-13-46-32.png)
+
+
+#### Challenge
+
+- Use select statment to grab the first & last names of every customer and their email address...
+
+```sql
+SELECT first_name, last_name, email FROM customer;
+```
