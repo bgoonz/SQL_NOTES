@@ -38,3 +38,19 @@ SELECT * FROM film;
 ---
 
 ### SQL Commands:
+
+- `SELECT` - used to select data from a database
+- `WHERE` - used to filter a query
+- `ORDER BY` - used to sort the results of a query
+- `LIMIT` - used to limit the number of results returned by a query
+- `JOIN` - used to combine data from multiple tables
+- `GROUP BY` - used to group the results of a query together
+- `HAVING` - used to filter the results of a query that has been grouped
+- `CREATE TABLE` - used to create a new table
+- `ALTER TABLE` - used to add, remove, or modify columns in an existing table
+- `DROP TABLE` - used to delete an entire table
+- `PRIMARY KEY` - used to define a column as a primary key
+- `FOREIGN KEY` - used to define a column as a foreign key
+
+
+
