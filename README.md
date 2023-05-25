@@ -26,3 +26,10 @@
 **Once you have restored the provided .tar file database, you can right click and use the querry tool to query it.**
 
 ![Select All Query In PgAdmin](2023-05-25-13-08-27.png)
+
+
+**Querry Entire Table**
+
+```sql
+SELECT * FROM film;
+```
