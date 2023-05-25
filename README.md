@@ -86,3 +86,19 @@ SELECT column_name, column_name FROM table_name;
 ```sql
 SELECT first_name, last_name, email FROM customer;
 ```
+
+
+**SELECT DISTINCT**
+- used to return only distinct (different) values
+- Sometimes a table contains a column that has duplicate values, and you may want to know what distinct values are stored in that column.
+
+```sql
+SELECT DISTINCT column_name FROM table_name;
+```
+
+
+
+> example: 
+```sql
+SELECT DISTINCT release_year FROM film;
+```
