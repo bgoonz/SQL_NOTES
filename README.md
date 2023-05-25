@@ -68,3 +68,13 @@ SELECT description FROM film;
 
 
 ![Select description FROM film;](2023-05-25-13-22-48.png)
+
+
+**If you want multiple rows from a table you can use a comma to separate the column names**
+
+```sql
+SELECT column_name, column_name FROM table_name;
+```
+
+![Select Multiple Columns](2023-05-25-13-44-01.png)
+
