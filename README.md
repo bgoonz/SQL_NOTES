@@ -78,7 +78,6 @@ SELECT column_name, column_name FROM table_name;
 
 ![View Tables In Database](2023-05-25-13-46-32.png)
 
-
 #### Challenge
 
 - Use select statment to grab the first & last names of every customer and their email address...
@@ -87,8 +86,8 @@ SELECT column_name, column_name FROM table_name;
 SELECT first_name, last_name, email FROM customer;
 ```
 
-
 **SELECT DISTINCT**
+
 - used to return only distinct (different) values
 - Sometimes a table contains a column that has duplicate values, and you may want to know what distinct values are stored in that column.
 
@@ -96,9 +95,16 @@ SELECT first_name, last_name, email FROM customer;
 SELECT DISTINCT column_name FROM table_name;
 ```
 
+> example:
 
-
-> example: 
 ```sql
 SELECT DISTINCT release_year FROM film;
+```
+
+**Challenge**
+
+- Use SELECT & DISTINCT to retrieve a list of all the rating types of our films.
+
+```sql
+SELECT DISTINCT rating FROM film;
 ```
