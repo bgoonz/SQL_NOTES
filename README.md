@@ -169,3 +169,9 @@ WHERE first_name = 'Jared';
 SELECT * FROM film
 WHERE rental_rate > 4;
 ```
+
+
+```sql
+SELECT * FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99;
+```
