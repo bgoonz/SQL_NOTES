@@ -124,3 +124,19 @@ SELECT COUNT (title) from film;
 ```sql
 SELECT COUNT (DISTINCT rating) from film;
 ```
+
+
+- What if we wanted to count the number of distinct payment amounts in the payment table?
+
+```sql
+SELECT COUNT(DISTINCT(amount)) FROM payment;
+```
+
+
+### WHERE
+
+- The WHERE statment allows us to specify conditions on columns for the rows we want to return from a query.
+- The WHERE clause appears right after the FROM clause of the SELECT statement.
+- The WHERE clause can be combined with AND, OR, and NOT operators.
+
+
