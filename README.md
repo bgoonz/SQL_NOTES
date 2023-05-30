@@ -231,3 +231,21 @@ WHERE title = 'Outlaw Hanky';
 SELECT phone FROM address
 WHERE address = '259 Ipoh Drive';
 ```
+
+
+---
+
+### ORDER BY
+- You can use ORDER BY to sort rows based on a column value in either ascending or descending order.
+> Syntax: ORDER BY uses ASC by default.
+```sql
+SELECT column_1, column_2 FROM table_name
+ORDER BY column_1 ASC|DESC;
+```
+
+- let's order the customer table by first name...
+
+```sql
+SELECT * FROM customer
+ORDER BY first_name;
+```
