@@ -108,3 +108,19 @@ SELECT DISTINCT release_year FROM film;
 ```sql
 SELECT DISTINCT rating FROM film;
 ```
+
+
+### Count
+- The COUNT function returns the number of rows that matches a specified criteria.
+- We can apply count on a specific column o just pass COUNT(*)
+- COUNT() does need the parentheses
+
+```sql
+SELECT COUNT (title) from film;
+```
+
+- Count is more useful when combined with other commands such as DISTINCT
+
+```sql
+SELECT COUNT (DISTINCT rating) from film;
+```
