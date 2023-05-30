@@ -139,4 +139,33 @@ SELECT COUNT(DISTINCT(amount)) FROM payment;
 - The WHERE clause appears right after the FROM clause of the SELECT statement.
 - The WHERE clause can be combined with AND, OR, and NOT operators.
 
+**Comparison Operators**
 
+- `=` equal
+- `!=` not equal
+- `>` greater than
+- `<` less than
+- `>=` greater than or equal to
+- `<=` less than or equal to
+- `BETWEEN` between an inclusive range
+- `LIKE` search for a pattern
+- `IN` specify multiple possible values for a column
+- `IS NULL` check if a value is null
+- `IS NOT NULL` check if a value is not null
+- `AND` used to combine two or more conditions
+- `OR` used to combine two or more conditions
+- `NOT` used to negate a condition
+
+
+**Example**
+
+```sql
+SELECT * FROM customer
+WHERE first_name = 'Jared';
+```
+
+
+```sql
+SELECT * FROM film
+WHERE rental_rate > 4;
+```
