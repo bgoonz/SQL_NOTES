@@ -204,4 +204,30 @@ AND rating = 'R';
 
 The column that you count is not important, it is just a way to count the number of rows that match the conditions.
 
+---
 
+### Challenge
+> What is the email for a customer with the name Nancy Thomas?
+
+```sql
+SELECT email FROM customer
+WHERE first_name = 'Nancy' AND last_name='Thomas';
+```
+
+
+**Challenge 2**
+> Give me a description for a movie called Outlaw Hanky
+
+```sql
+SELECT description FROM film
+WHERE title = 'Outlaw Hanky';
+```
+
+
+**Challenge 3**
+> Can you get the phone number for the customer who's address is 259 Ipoh Drive?
+
+```sql
+SELECT phone FROM address
+WHERE address = '259 Ipoh Drive';
+```
