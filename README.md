@@ -109,10 +109,10 @@ SELECT DISTINCT release_year FROM film;
 SELECT DISTINCT rating FROM film;
 ```
 
-
 ### Count
+
 - The COUNT function returns the number of rows that matches a specified criteria.
-- We can apply count on a specific column o just pass COUNT(*)
+- We can apply count on a specific column o just pass COUNT(\*)
 - COUNT() does need the parentheses
 
 ```sql
@@ -125,13 +125,11 @@ SELECT COUNT (title) from film;
 SELECT COUNT (DISTINCT rating) from film;
 ```
 
-
 - What if we wanted to count the number of distinct payment amounts in the payment table?
 
 ```sql
 SELECT COUNT(DISTINCT(amount)) FROM payment;
 ```
-
 
 ### WHERE
 
@@ -156,7 +154,6 @@ SELECT COUNT(DISTINCT(amount)) FROM payment;
 - `OR` used to combine two or more conditions
 - `NOT` used to negate a condition
 
-
 **Example**
 
 ```sql
@@ -164,14 +161,47 @@ SELECT * FROM customer
 WHERE first_name = 'Jared';
 ```
 
-
 ```sql
 SELECT * FROM film
 WHERE rental_rate > 4;
 ```
 
-
 ```sql
 SELECT * FROM film
 WHERE rental_rate > 4 AND replacement_cost >= 19.99;
 ```
+
+```sql
+SELECT * FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99
+AND rating = 'R';
+```
+
+- If we just wanted the titles from the rows that matched the previous conditions:
+
+```sql
+SELECT title FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99
+AND rating = 'R';
+```
+
+- If I want to count the number of titles that the previous querry returns..
+
+```sql
+SELECT COUNT(title) FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99
+AND rating = 'R';
+```
+
+
+- The above code is equivalent to the following:
+
+```sql
+SELECT COUNT(*) FROM film
+WHERE rental_rate > 4 AND replacement_cost >= 19.99
+AND rating = 'R';
+```
+
+The column that you count is not important, it is just a way to count the number of rows that match the conditions.
+
+
