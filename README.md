@@ -498,3 +498,17 @@ SELECT first_name, last_name FROM customer
 WHERE first_name LIKE 'A%' AND last_name NOT LIKE 'B%'
 ORDER BY last_name;
 ```
+
+---
+
+### Challenge
+
+- How many payment transactions were greater than $5.00?
+
+```sql
+SELECT COUNT(*) FROM payment 
+WHERE amount > 5
+```
+
+
+
