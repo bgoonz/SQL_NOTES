@@ -342,3 +342,23 @@ SELECT COUNT(*) FROM film WHERE length <= 50;
 SELECT COUNT(length) FROM film WHERE length <= 50;
 ```
 
+---
+
+### BETWEEN
+
+- The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+- The BETWEEN operator is inclusive: begin and end values are included.
+- The BETWEEN operator can be used in any valid SQL statement - select, insert, update, or delete.
+- The BETWEEN operator is often used in the WHERE clause of the SELECT, UPDATE, and DELETE statements.
+
+```sql
+SELECT * FROM payment
+WHERE amount BETWEEN 8 AND 9;
+```
+
+> to find how many results matched the above criteria:
+
+```sql
+SELECT COUNT(*) FROM payment
+WHERE amount BETWEEN 8 AND 9;
+```
