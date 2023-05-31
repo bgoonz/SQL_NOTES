@@ -447,3 +447,15 @@ WHERE first_name LIKE '%a';
 ```
 
 
+**Note that LIKE is case-sensitive if you want a case-insensative match you can use ILIKE**
+
+- using the underscore allows us to replace just a single character...
+
+> i.e. get all Mission Impossible films
+
+```sql
+WHERE title LIKE 'Mission Impossible _';
+```
+
+
+[REGEX is PSQL](https://www.postgresql.org/docs/15/functions-matching.html)
