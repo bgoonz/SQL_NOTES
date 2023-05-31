@@ -369,3 +369,9 @@ WHERE amount BETWEEN 8 AND 9;
 SELECT * FROM payment
 WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15';
 ```
+
+> When you use the BETWEEN operator with date values, keep in mind that the BETWEEN operator is inclusive but the date values themselves are not. So in the example above `2007-02-15` does not include any payments that were made on that date.
+
+
+
+
