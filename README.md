@@ -20,14 +20,14 @@
 - [PSQL Documentation](https://www.postgresql.org/docs/)
 
 **SQL Cheat Sheet:**
-![Cheat Sheet](./sql-cheat-sheet.png)
+![Cheat Sheet](./images/sql-cheat-sheet.png)
 
 - what PG Admin Looks Like:
-  ![PG Admin Interface](2023-05-25-13-01-24.png)
+  ![PG Admin Interface](./images/2023-05-25-13-01-24.png)
 
 **Once you have restored the provided .tar file database, you can right click and use the querry tool to query it.**
 
-![Select All Query In PgAdmin](2023-05-25-13-08-27.png)
+![Select All Query In PgAdmin](./images/2023-05-25-13-08-27.png)
 
 **Querry Entire Table**
 
@@ -64,7 +64,7 @@ example:
 SELECT description FROM film;
 ```
 
-![Select description FROM film;](2023-05-25-13-22-48.png)
+![Select description FROM film;](./images/2023-05-25-13-22-48.png)
 
 **If you want multiple rows from a table you can use a comma to separate the column names**
 
@@ -72,11 +72,11 @@ SELECT description FROM film;
 SELECT column_name, column_name FROM table_name;
 ```
 
-![Select Multiple Columns](2023-05-25-13-44-01.png)
+![Select Multiple Columns](./images/2023-05-25-13-44-01.png)
 
 **How to view list of tables in your database in PGAdmin**
 
-![View Tables In Database](2023-05-25-13-46-32.png)
+![View Tables In Database](./images/2023-05-25-13-46-32.png)
 
 #### Challenge
 
