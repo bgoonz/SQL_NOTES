@@ -193,7 +193,6 @@ WHERE rental_rate > 4 AND replacement_cost >= 19.99
 AND rating = 'R';
 ```
 
-
 - The above code is equivalent to the following:
 
 ```sql
@@ -207,6 +206,7 @@ The column that you count is not important, it is just a way to count the number
 ---
 
 ### Challenge
+
 > What is the email for a customer with the name Nancy Thomas?
 
 ```sql
@@ -214,8 +214,8 @@ SELECT email FROM customer
 WHERE first_name = 'Nancy' AND last_name='Thomas';
 ```
 
-
 **Challenge 2**
+
 > Give me a description for a movie called Outlaw Hanky
 
 ```sql
@@ -223,8 +223,8 @@ SELECT description FROM film
 WHERE title = 'Outlaw Hanky';
 ```
 
-
 **Challenge 3**
+
 > Can you get the phone number for the customer who's address is 259 Ipoh Drive?
 
 ```sql
@@ -232,12 +232,13 @@ SELECT phone FROM address
 WHERE address = '259 Ipoh Drive';
 ```
 
-
 ---
 
 ### ORDER BY
+
 - You can use ORDER BY to sort rows based on a column value in either ascending or descending order.
-> Syntax: ORDER BY uses ASC by default.
+  > Syntax: ORDER BY uses ASC by default.
+
 ```sql
 SELECT column_1, column_2 FROM table_name
 ORDER BY column_1 ASC|DESC;
@@ -249,7 +250,6 @@ ORDER BY column_1 ASC|DESC;
 SELECT * FROM customer
 ORDER BY first_name;
 ```
-
 
 - To get the result in descending order:
 
@@ -296,10 +296,10 @@ ORDER BY payment_date
 LIMIT 5;
 ```
 
-
-
 > Combining ORDER BY and LIMIT and WHERE
+
 - this gives us the 5 most recent payments that are not 0.00
+
 ```sql
 SELECT * FROM payment
 WHERE amount != 0.00
@@ -315,12 +315,12 @@ LIMIT 5;
 
 ```sql
 SELECT customer_id FROM payment
-ORDER BY payment_date 
+ORDER BY payment_date
 LIMIT 10;
 ```
 
-
 **Challenge 2**
+
 - What are the titles of the first 5 movies that were rented out?
 
 ```sql
@@ -328,14 +328,17 @@ SELECT title FROM film
 ORDER BY length
 LIMIT 5;
 ```
+
 > above length is highlighted because length is also a SQL keyword...
 
 **Challenge 3**
+
 - If the previous customer can watch any movie that is 50 minutes or less in runtime how many options does she have?
 
 ```sql
 SELECT COUNT(*) FROM film WHERE length <= 50;
 ```
+
 > or
 
 ```sql
@@ -372,21 +375,20 @@ WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15';
 
 > When you use the BETWEEN operator with date values, keep in mind that the BETWEEN operator is inclusive but the date values themselves are not. So in the example above `2007-02-15` does not include any payments that were made on that date.
 
-
 ---
 
 ### IN
 
 - We can use the IN operator to create a condition that checks to see if a value matches any value in a list of values.
 - The IN operator is often used in the WHERE clause of the SELECT, UPDATE, and DELETE statements.
-> example:
+  > example:
+
 ```sql
 SELECT color FROM table
 WHERE color IN ('red', 'blue', 'green');
 ```
 
 > in the above example we are looking for rows where the color is either red, or blue, or green.
-
 
 - you can also negate the IN operator with NOT
 
@@ -398,13 +400,12 @@ WHERE color NOT IN ('red', 'blue', 'green');
 > in the above example we are looking for rows where the color is not red, or blue, or green.
 
 **Real Example With Our Database**
-    
+
 ```sql
 SELECT * FROM payment
 WHERE amount IN (0.99,1.98,1.99)
 ORDER BY amount;
 ```
-
 
 - to find the number of payments where the ammount is not 0.99, 1.98, or 1.99
 
@@ -414,10 +415,8 @@ WHERE amount NOT IN (0.99,1.98,1.99);
 ```
 
 - find all customers where the first name is either John, Jake, or Julie
-    
+
 ```sql
 SELECT * FROM customer
 WHERE first_name IN ('John', 'Jake', 'Julie');
 ```
-
-
