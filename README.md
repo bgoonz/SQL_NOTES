@@ -550,15 +550,28 @@ WHERE title LIKE '%Truman%';
 [Aggregate Functions](https://www.postgresql.org/docs/15/functions-aggregate.html)
 
 **Most Common Aggregate Functions**
-- AVG() - Returns the average value.
-- COUNT() - Returns the number of rows.
+- AVG() - Returns the average value. AVG returns a floating point value, you can use ROUND to specify precision after the decimal point.
+- COUNT() - Returns the number of rows. COUNT simply returns the number of rows, which means by convention we just use count(*) to count all rows.
 - FIRST() - Returns the first value.
 - LAST() - Returns the last value.
 - MAX() - Returns the largest value.
 - MIN() - Returns the smallest value.
 - SUM() - Returns the sum.
 
+**Aggregate Functions calls happen only in the SELECT clause or in the HAVING clause**
 
 
+> examples:
 
+```sql
+SELECT MIN(replacement_cost) FROM film;
+```
 
+```sql
+SELECT AVG(replacement_cost) FROM film;
+```
+
+- to round the above result to 2 decimal places
+```sql
+SELECT ROUND(AVG(replacement_cost),2) FROM film;
+```
