@@ -459,3 +459,21 @@ WHERE title LIKE 'Mission Impossible _';
 
 
 [REGEX is PSQL](https://www.postgresql.org/docs/15/functions-matching.html)
+
+
+**Example**
+> Find all customers who's name starts with J
+
+```sql
+SELECT first_name FROM customer
+WHERE first_name LIKE 'J%';
+```
+
+> Find all customers who's name starts with J and last name starts with S
+
+```sql
+SELECT first_name, last_name FROM customer
+WHERE first_name LIKE 'J%' AND last_name LIKE 'S%';
+```
+
+
