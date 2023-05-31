@@ -477,3 +477,24 @@ WHERE first_name LIKE 'J%' AND last_name LIKE 'S%';
 ```
 
 
+- find people who have the sequence of characters `er` in their first name
+
+```sql
+SELECT first_name FROM customer
+WHERE first_name LIKE '%er%';
+```
+
+- if you want to narrow it down to people who's first name starts with some letter and followed by the sequence of characters `er` in their first name
+
+```sql
+SELECT first_name FROM customer
+WHERE first_name LIKE '_er%';
+```
+
+- find all customers who's first name starts with an A and who's last name doesn't end with an B
+
+```sql
+SELECT first_name, last_name FROM customer
+WHERE first_name LIKE 'A%' AND last_name NOT LIKE 'B%'
+ORDER BY last_name;
+```
