@@ -288,6 +288,21 @@ ORDER BY store_id DESC, first_name;
 - The LIMIT clause accepts one or two arguments. The values of both arguments must be zero or positive integers.
 - If you supply one argument, it must be a positive integer. The query will return the maximum number of rows specified by the integer.
 - If you supply two arguments, the first argument must be a zero or positive integer. The query will skip the offset rows before returning the maximum number of rows specified by the second argument.
+- LIMIT goes at the end of the query
+
+```sql
+SELECT * FROM payment
+ORDER BY payment_date
+LIMIT 5;
+```
 
 
 
+> Combining ORDER BY and LIMIT and WHERE
+
+```sql
+SELECT * FROM payment
+WHERE amount != 0.00
+ORDER BY payment_date DESC
+LIMIT 5;
+```
