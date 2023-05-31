@@ -510,5 +510,16 @@ SELECT COUNT(*) FROM payment
 WHERE amount > 5
 ```
 
+- How many actors have a first name that starts with the letter P?
+
+```sql
+SELECT COUNT(*) FROM actor
+WHERE first_name LIKE ('P%')
+```
 
 
+- How many unique districts are our customers from?
+
+```sql
+SELECT COUNT (DISTINCT(district)) FROM address;
+```
