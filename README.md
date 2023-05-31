@@ -265,4 +265,29 @@ SELECT * FROM customer
 ORDER BY store_id, first_name;
 ```
 
+- If we want to order by store_id (DESC) and then by first_name (ASC) we can do the following:
+
+```sql
+SELECT * FROM customer
+ORDER BY store_id DESC, first_name;
+```
+
+- You can also order by columns you are not selecting:
+
+```sql
+SELECT first_name, last_name FROM customer
+ORDER BY store_id DESC, first_name;
+```
+
+---
+
+### LIMIT
+
+- The LIMIT clause is used to limit the number of rows returned in a query result.
+- You can use the LIMIT clause to constrain the number of rows returned by the SELECT statement.
+- The LIMIT clause accepts one or two arguments. The values of both arguments must be zero or positive integers.
+- If you supply one argument, it must be a positive integer. The query will return the maximum number of rows specified by the integer.
+- If you supply two arguments, the first argument must be a zero or positive integer. The query will skip the offset rows before returning the maximum number of rows specified by the second argument.
+
+
 
