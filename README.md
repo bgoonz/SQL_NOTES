@@ -420,3 +420,30 @@ WHERE amount NOT IN (0.99,1.98,1.99);
 SELECT * FROM customer
 WHERE first_name IN ('John', 'Jake', 'Julie');
 ```
+
+---
+
+### LIKE and ILIKE
+
+- The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+- There are two wildcards often used in conjunction with the LIKE operator:
+  - % - The percent sign represents zero, one, or multiple characters
+  - _ - The underscore represents a single character
+
+- we can use the LIKE operator to match patterns like all emails ending in gmail.com or all names that start with the letter A.
+
+- all names that begin with the letter A
+
+```sql
+SELECT * FROM customer
+WHERE first_name LIKE 'A%';
+```
+ 
+- all names that end with the letter A
+
+```sql
+SELECT * FROM customer
+WHERE first_name LIKE '%a';
+```
+
+
