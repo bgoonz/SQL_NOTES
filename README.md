@@ -299,10 +299,22 @@ LIMIT 5;
 
 
 > Combining ORDER BY and LIMIT and WHERE
-
+- this gives us the 5 most recent payments that are not 0.00
 ```sql
 SELECT * FROM payment
 WHERE amount != 0.00
 ORDER BY payment_date DESC
 LIMIT 5;
+```
+
+---
+
+### Challenge
+
+- What are the customer ids of the first 10 customers who created a payment?
+
+```sql
+SELECT customer_id FROM payment
+ORDER BY payment_date 
+LIMIT 10;
 ```
