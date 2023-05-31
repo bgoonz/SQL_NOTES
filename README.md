@@ -328,3 +328,17 @@ SELECT title FROM film
 ORDER BY length
 LIMIT 5;
 ```
+> above length is highlighted because length is also a SQL keyword...
+
+**Challenge 3**
+- If the previous customer can watch any movie that is 50 minutes or less in runtime how many options does she have?
+
+```sql
+SELECT COUNT(*) FROM film WHERE length <= 50;
+```
+> or
+
+```sql
+SELECT COUNT(length) FROM film WHERE length <= 50;
+```
+
