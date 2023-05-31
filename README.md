@@ -427,8 +427,9 @@ WHERE first_name IN ('John', 'Jake', 'Julie');
 
 - The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
 - There are two wildcards often used in conjunction with the LIKE operator:
+
   - % - The percent sign represents zero, one, or multiple characters
-  - _ - The underscore represents a single character
+  - \_ - The underscore represents a single character
 
 - we can use the LIKE operator to match patterns like all emails ending in gmail.com or all names that start with the letter A.
 
@@ -438,14 +439,13 @@ WHERE first_name IN ('John', 'Jake', 'Julie');
 SELECT * FROM customer
 WHERE first_name LIKE 'A%';
 ```
- 
+
 - all names that end with the letter A
 
 ```sql
 SELECT * FROM customer
 WHERE first_name LIKE '%a';
 ```
-
 
 **Note that LIKE is case-sensitive if you want a case-insensative match you can use ILIKE**
 
@@ -457,11 +457,10 @@ WHERE first_name LIKE '%a';
 WHERE title LIKE 'Mission Impossible _';
 ```
 
-
 [REGEX is PSQL](https://www.postgresql.org/docs/15/functions-matching.html)
 
-
 **Example**
+
 > Find all customers who's name starts with J
 
 ```sql
@@ -475,7 +474,6 @@ WHERE first_name LIKE 'J%';
 SELECT first_name, last_name FROM customer
 WHERE first_name LIKE 'J%' AND last_name LIKE 'S%';
 ```
-
 
 - find people who have the sequence of characters `er` in their first name
 
@@ -506,7 +504,7 @@ ORDER BY last_name;
 - How many payment transactions were greater than $5.00?
 
 ```sql
-SELECT COUNT(*) FROM payment 
+SELECT COUNT(*) FROM payment
 WHERE amount > 5
 ```
 
@@ -516,7 +514,6 @@ WHERE amount > 5
 SELECT COUNT(*) FROM actor
 WHERE first_name LIKE ('P%')
 ```
-
 
 - How many unique districts are our customers from?
 
@@ -530,10 +527,38 @@ SELECT COUNT (DISTINCT(district)) FROM address;
 SELECT DISTINCT(district) FROM address;
 ```
 
-
 - How many films have a rating of R and a replacement cost between $5 and $15?
 
 ```sql
 SELECT COUNT (*) FROM film
 WHERE rating = 'R' AND replacement_cost BETWEEN 5 AND 15;
 ```
+
+
+- How many films have the word Truman somewhere in the title?
+
+```sql
+SELECT COUNT (*) FROM film
+WHERE title LIKE '%Truman%';
+```
+
+---
+
+### Aggregate Functions
+- The main idea of an aggregate function is that it takes multiple values and returns a single value.
+
+[Aggregate Functions](https://www.postgresql.org/docs/15/functions-aggregate.html)
+
+**Most Common Aggregate Functions**
+- AVG() - Returns the average value.
+- COUNT() - Returns the number of rows.
+- FIRST() - Returns the first value.
+- LAST() - Returns the last value.
+- MAX() - Returns the largest value.
+- MIN() - Returns the smallest value.
+- SUM() - Returns the sum.
+
+
+
+
+
