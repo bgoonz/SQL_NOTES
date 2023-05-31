@@ -388,3 +388,13 @@ WHERE color IN ('red', 'blue', 'green');
 > in the above example we are looking for rows where the color is either red, or blue, or green.
 
 
+- you can also negate the IN operator with NOT
+
+```sql
+SELECT color FROM table
+WHERE color NOT IN ('red', 'blue', 'green');
+```
+
+> in the above example we are looking for rows where the color is not red, or blue, or green.
+
+
