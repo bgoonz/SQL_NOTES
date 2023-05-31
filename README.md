@@ -397,4 +397,27 @@ WHERE color NOT IN ('red', 'blue', 'green');
 
 > in the above example we are looking for rows where the color is not red, or blue, or green.
 
+**Real Example With Our Database**
+    
+```sql
+SELECT * FROM payment
+WHERE amount IN (0.99,1.98,1.99)
+ORDER BY amount;
+```
+
+
+- to find the number of payments where the ammount is not 0.99, 1.98, or 1.99
+
+```sql
+SELECT COUNT(*) FROM payment
+WHERE amount NOT IN (0.99,1.98,1.99);
+```
+
+- find all customers where the first name is either John, Jake, or Julie
+    
+```sql
+SELECT * FROM customer
+WHERE first_name IN ('John', 'Jake', 'Julie');
+```
+
 
