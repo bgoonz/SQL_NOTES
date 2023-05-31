@@ -318,3 +318,13 @@ SELECT customer_id FROM payment
 ORDER BY payment_date 
 LIMIT 10;
 ```
+
+
+**Challenge 2**
+- What are the titles of the first 5 movies that were rented out?
+
+```sql
+SELECT title FROM film
+ORDER BY length
+LIMIT 5;
+```
