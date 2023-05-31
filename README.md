@@ -249,3 +249,20 @@ ORDER BY column_1 ASC|DESC;
 SELECT * FROM customer
 ORDER BY first_name;
 ```
+
+
+- To get the result in descending order:
+
+```sql
+SELECT * FROM customer
+ORDER BY first_name DESC;
+```
+
+- if we want to order by store_id and then by first_name (alphabetically) we can do the following:
+
+```sql
+SELECT * FROM customer
+ORDER BY store_id, first_name;
+```
+
+
