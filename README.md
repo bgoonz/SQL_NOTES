@@ -373,5 +373,18 @@ WHERE payment_date BETWEEN '2007-02-01' AND '2007-02-15';
 > When you use the BETWEEN operator with date values, keep in mind that the BETWEEN operator is inclusive but the date values themselves are not. So in the example above `2007-02-15` does not include any payments that were made on that date.
 
 
+---
+
+### IN
+
+- We can use the IN operator to create a condition that checks to see if a value matches any value in a list of values.
+- The IN operator is often used in the WHERE clause of the SELECT, UPDATE, and DELETE statements.
+> example:
+```sql
+SELECT color FROM table
+WHERE color IN ('red', 'blue', 'green');
+```
+
+> in the above example we are looking for rows where the color is either red, or blue, or green.
 
 
