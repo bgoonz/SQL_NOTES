@@ -523,3 +523,9 @@ WHERE first_name LIKE ('P%')
 ```sql
 SELECT COUNT (DISTINCT(district)) FROM address;
 ```
+
+- Retrieve list of names for those distinct districts from the previous question
+
+```sql
+SELECT DISTINCT(district) FROM address;
+```
