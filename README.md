@@ -605,3 +605,39 @@ FROM table
 WHERE category_col != 'A'
 GROUP BY category_col
 ```
+
+- Basic Example using our Local Database:
+
+```sql
+SELECT customer_id, SUM(amount) FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount)
+```
+
+> Example using two columns:
+
+- In this example the order of columns in the select statment does not matter but the order of the coulumns in the Group By does matter.
+
+```sql
+SELECT customer_id, staff_id, SUM(amount) FROM payment
+GROUP BY staff_id, customer_id
+ORDER BY customer_id
+```
+
+![Result of Group By -2 Columns](./images/2023-11-30-15-19-43.png)
+
+- When the date is listed as a time stamp you need to use a special date function to convert it to a date that you can group by.
+
+```sql
+SELECT DATE(payment_date) FROM payment
+```
+
+- The code above will give you just the date without the hour/minute/second.
+
+> Grouping by payment date and orderin by sum of payments on said dates:
+
+```sql
+SELECT DATE(payment_date), SUM(amount) FROM payment
+GROUP BY DATE(payment_date)
+ORDER BY SUM(amount) DESC
+```
