@@ -534,7 +534,6 @@ SELECT COUNT (*) FROM film
 WHERE rating = 'R' AND replacement_cost BETWEEN 5 AND 15;
 ```
 
-
 - How many films have the word Truman somewhere in the title?
 
 ```sql
@@ -545,13 +544,15 @@ WHERE title LIKE '%Truman%';
 ---
 
 ### Aggregate Functions
+
 - The main idea of an aggregate function is that it takes multiple values and returns a single value.
 
 [Aggregate Functions](https://www.postgresql.org/docs/15/functions-aggregate.html)
 
 **Most Common Aggregate Functions**
+
 - AVG() - Returns the average value. AVG returns a floating point value, you can use ROUND to specify precision after the decimal point.
-- COUNT() - Returns the number of rows. COUNT simply returns the number of rows, which means by convention we just use count(*) to count all rows.
+- COUNT() - Returns the number of rows. COUNT simply returns the number of rows, which means by convention we just use count(\*) to count all rows.
 - FIRST() - Returns the first value.
 - LAST() - Returns the last value.
 - MAX() - Returns the largest value.
@@ -559,7 +560,6 @@ WHERE title LIKE '%Truman%';
 - SUM() - Returns the sum.
 
 **Aggregate Functions calls happen only in the SELECT clause or in the HAVING clause**
-
 
 > examples:
 
@@ -572,6 +572,36 @@ SELECT AVG(replacement_cost) FROM film;
 ```
 
 - to round the above result to 2 decimal places
+
 ```sql
 SELECT ROUND(AVG(replacement_cost),2) FROM film;
+```
+
+---
+
+## GROUP BY:
+
+- Group By allows us to aggregate (reduce multiple values into a single value) columns per some category.
+
+![Group By](./images/2023-11-30-13-49-45.png)
+
+![Group By Aggregate Example](./images/2023-11-30-13-52-19.png)
+
+**Basic Syntax**
+
+```sql
+SELECT category_col , AGG(data_col)
+FROM table
+GROUP BY category_col
+```
+
+- The GROUP BY lause must appear right after a FROM or WHERE statment.
+
+> Example using WHERE statment:
+
+```sql
+SELECT category_col , AGG(data_col)
+FROM table
+WHERE category_col != 'A'
+GROUP BY category_col
 ```
