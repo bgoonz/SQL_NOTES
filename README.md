@@ -641,3 +641,25 @@ SELECT DATE(payment_date), SUM(amount) FROM payment
 GROUP BY DATE(payment_date)
 ORDER BY SUM(amount) DESC
 ```
+
+**Comments in SQL:**
+
+1.  **Single-Line Comments**:
+
+    - You can start a single-line comment with `--`, and everything following this on the same line will be a comment.
+    - Example:
+
+      sqlCopy code
+
+      `-- This is a single-line commentSELECT * FROM users;`
+
+2.  **Multi-Line Comments**:
+
+    - For multi-line comments, you use `/*` to start the comment and `*/` to end it. Everything between these will be considered a comment.
+    - Example:
+
+      sqlCopy code
+
+      `/* This is a multi-line commentIt can span multiple lines */SELECT * FROM users;`
+
+- Both types of comments are ignored by the SQL engine when executing the script. You can use comments to explain parts of your SQL code, make notes for yourself or others, or temporarily disable parts of the SQL code without deleting it.
