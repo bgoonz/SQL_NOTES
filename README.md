@@ -708,3 +708,20 @@ SELECT store_id, COUNT(customer_id) FROM customer
 GROUP BY store_id
 HAVING COUNT(*) > 300
 ```
+
+**Refresher on COUNT() function**
+
+
+The `COUNT()` function in SQL is used to count the number of rows in a database table that match a specified condition. It's a commonly used aggregate function that provides the total number of entries in a set of rows.
+
+Here's a basic overview of its functionality:
+
+1.  **Counting All Rows:** When used without a condition, `COUNT()` returns the total number of rows in a table. For example, `SELECT COUNT(*) FROM table_name;` will give you the total number of rows in `table_name`.
+    
+2.  **Counting Rows with a Condition:** If you want to count rows that meet certain criteria, you can use `COUNT()` with a `WHERE` clause. For example, `SELECT COUNT(*) FROM table_name WHERE condition;` will count rows that satisfy the `condition`.
+    
+3.  **Counting Distinct Values:** You can also use `COUNT()` to count distinct values in a column, which means it will count only unique entries. The syntax is `SELECT COUNT(DISTINCT column_name) FROM table_name;`.
+    
+4.  **In Group By Queries:** `COUNT()` is often used with `GROUP BY` clauses to count rows in different groups. For example, `SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;` will count the number of rows for each unique value in `column_name`.
+    
+5.  **Handling NULL Values:** `COUNT(column_name)` counts the number of non-NULL values in a column, whereas `COUNT(*)` includes rows with NULL values in the count.
