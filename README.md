@@ -663,3 +663,48 @@ ORDER BY SUM(amount) DESC
       `/* This is a multi-line commentIt can span multiple lines */SELECT * FROM users;`
 
 - Both types of comments are ignored by the SQL engine when executing the script. You can use comments to explain parts of your SQL code, make notes for yourself or others, or temporarily disable parts of the SQL code without deleting it.
+
+
+---
+
+
+### HAVING:
+- The HAVING clause allows us to filter after an aggregation has already taken place.
+
+> Example: (aggregating sales per company)
+
+```sql
+SELECT company, SUM(sales)
+FROM finance_table
+WHERE company != "GOOGLE"
+GROUP BY company
+```
+- We cannot use WHERE to filter based of aggregate resuts, because those happen after a WHERE is executed
+- Previously, we've already seen we can filter before executing the GROUP BY, but what if we want to filter based on `SUM(sales)`
+
+
+- **HAVING** allows us to use the aggregate result as a filter along with a GROUP BY.
+
+```sql
+SELECT company, SUM(sales)
+FROM finance_table
+WHERE company != "GOOGLE"
+GROUP BY company
+HAVING SUM(sales)>1000
+```
+
+> Another example:
+
+```sql
+SELECT customer_id, SUM(amount) from payment
+GROUP BY customer_id
+HAVING SUM(amount) >100
+```
+
+> Example using COUNT:
+
+```sql
+SELECT store_id, COUNT(customer_id) FROM customer
+GROUP BY store_id
+HAVING COUNT(*) > 300
+```
