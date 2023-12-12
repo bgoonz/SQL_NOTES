@@ -725,3 +725,52 @@ Here's a basic overview of its functionality:
 4.  **In Group By Queries:** `COUNT()` is often used with `GROUP BY` clauses to count rows in different groups. For example, `SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;` will count the number of rows for each unique value in `column_name`.
     
 5.  **Handling NULL Values:** `COUNT(column_name)` counts the number of non-NULL values in a column, whereas `COUNT(*)` includes rows with NULL values in the count.
+
+
+---
+---
+
+## JOINS:
+
+**Resources**
+
+[**SQL JOINS Explained with Venn Diagrams**](http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
+
+[**SQL JOIN Examples**](http://www.sql-join.com/)
+
+[**Wikipedia Page on SQL JOINS**](https://en.wikipedia.org/wiki/Join_(SQL))
+
+
+### AS Statement:
+
+- Allows us to create an alias for a column or result.
+
+```sql
+SELECT column AS new_name
+FROM table
+```
+
+```sql
+SELECT amount AS rental_price
+FROM payment
+```
+> gives you a column called rental_price instead of aount.
+
+- This can be paticularly applicable to the result of an aggregating function... i.e.
+
+```sql
+SELECT SUM(amount) AS net_revenue
+FROM payment
+```
+
+- **The `AS` operator gets executed at the very end of a query, mening that we can not use ALIAS inside a WHERE  or HAVING operator.**
+
+
+```sql
+SELECT customer_id, SUM(amount) AS total_spent
+FROM payment
+GROUP BY customer_id
+```
+
+
+
