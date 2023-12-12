@@ -773,4 +773,21 @@ GROUP BY customer_id
 ```
 
 
+---
 
+- Joins help us to combine multiple tables together.
+- The main reason there are different types of joins is to decide how to deal with information that is only present in one of the joined tables.
+
+
+### Inner Joins
+>Simple example: let's imagine our company is holding a conference for people in the movie rental industry. We'll have people register online beforehand and then login the day of the conference. 
+
+
+![After conference](./images/2023-12-12-12-01-53.png)
+
+- In the tables above, the respective id columns indicate what order they registered or logged in on the site.
+
+- **An `INNER JOIN` will result with the set of records that match in both tables.
+
+
+![Match](./images/2023-12-12-12-05-18.png)
