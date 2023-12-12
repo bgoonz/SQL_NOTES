@@ -799,3 +799,21 @@ SELECT * FROM Registrations
 INNER JOIN Logins
 ON Registrations.name= Logins.name
 ```
+
+- Note: PostgreSQL treats the keyword JOIN as an INNER JOIN
+
+> Examples:
+- This joins the payment and customer tables on the customer id 
+```sql
+SELECT * FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id
+```
+
+- If we want to restrict which rows we want in our result:
+
+```sql
+SELECT payment_id, payment.customer_id,first_name FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id
+```
