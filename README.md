@@ -664,11 +664,10 @@ ORDER BY SUM(amount) DESC
 
 - Both types of comments are ignored by the SQL engine when executing the script. You can use comments to explain parts of your SQL code, make notes for yourself or others, or temporarily disable parts of the SQL code without deleting it.
 
-
 ---
 
-
 ### HAVING:
+
 - The HAVING clause allows us to filter after an aggregation has already taken place.
 
 > Example: (aggregating sales per company)
@@ -679,9 +678,9 @@ FROM finance_table
 WHERE company != "GOOGLE"
 GROUP BY company
 ```
+
 - We cannot use WHERE to filter based of aggregate resuts, because those happen after a WHERE is executed
 - Previously, we've already seen we can filter before executing the GROUP BY, but what if we want to filter based on `SUM(sales)`
-
 
 - **HAVING** allows us to use the aggregate result as a filter along with a GROUP BY.
 
@@ -711,23 +710,18 @@ HAVING COUNT(*) > 300
 
 **Refresher on COUNT() function**
 
-
 The `COUNT()` function in SQL is used to count the number of rows in a database table that match a specified condition. It's a commonly used aggregate function that provides the total number of entries in a set of rows.
 
 Here's a basic overview of its functionality:
 
 1.  **Counting All Rows:** When used without a condition, `COUNT()` returns the total number of rows in a table. For example, `SELECT COUNT(*) FROM table_name;` will give you the total number of rows in `table_name`.
-    
 2.  **Counting Rows with a Condition:** If you want to count rows that meet certain criteria, you can use `COUNT()` with a `WHERE` clause. For example, `SELECT COUNT(*) FROM table_name WHERE condition;` will count rows that satisfy the `condition`.
-    
 3.  **Counting Distinct Values:** You can also use `COUNT()` to count distinct values in a column, which means it will count only unique entries. The syntax is `SELECT COUNT(DISTINCT column_name) FROM table_name;`.
-    
 4.  **In Group By Queries:** `COUNT()` is often used with `GROUP BY` clauses to count rows in different groups. For example, `SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name;` will count the number of rows for each unique value in `column_name`.
-    
 5.  **Handling NULL Values:** `COUNT(column_name)` counts the number of non-NULL values in a column, whereas `COUNT(*)` includes rows with NULL values in the count.
 
-
 ---
+
 ---
 
 ## JOINS:
@@ -738,8 +732,7 @@ Here's a basic overview of its functionality:
 
 [**SQL JOIN Examples**](http://www.sql-join.com/)
 
-[**Wikipedia Page on SQL JOINS**](https://en.wikipedia.org/wiki/Join_(SQL))
-
+[**Wikipedia Page on SQL JOINS**](<https://en.wikipedia.org/wiki/Join_(SQL)>)
 
 ### AS Statement:
 
@@ -754,6 +747,7 @@ FROM table
 SELECT amount AS rental_price
 FROM payment
 ```
+
 > gives you a column called rental_price instead of aount.
 
 - This can be paticularly applicable to the result of an aggregating function... i.e.
@@ -763,8 +757,7 @@ SELECT SUM(amount) AS net_revenue
 FROM payment
 ```
 
-- **The `AS` operator gets executed at the very end of a query, mening that we can not use ALIAS inside a WHERE  or HAVING operator.**
-
+- **The `AS` operator gets executed at the very end of a query, mening that we can not use ALIAS inside a WHERE or HAVING operator.**
 
 ```sql
 SELECT customer_id, SUM(amount) AS total_spent
@@ -772,22 +765,37 @@ FROM payment
 GROUP BY customer_id
 ```
 
-
 ---
 
 - Joins help us to combine multiple tables together.
 - The main reason there are different types of joins is to decide how to deal with information that is only present in one of the joined tables.
 
-
 ### Inner Joins
->Simple example: let's imagine our company is holding a conference for people in the movie rental industry. We'll have people register online beforehand and then login the day of the conference. 
-
 
 ![After conference](./images/2023-12-12-12-01-53.png)
 
 - In the tables above, the respective id columns indicate what order they registered or logged in on the site.
 
-- **An `INNER JOIN` will result with the set of records that match in both tables.
-
+- \*\*An `INNER JOIN` will result with the set of records that match in both tables.
 
 ![Match](./images/2023-12-12-12-05-18.png)
+
+**Syntax**
+
+> Only grab the rows that happen to be in both TableA and TableB
+
+- We have to join these tables on a paticular column...
+
+```sql
+SELECT * FROM TableA
+INNER JOIN TableB
+ON TableA.col_match = TableB.col_match
+```
+
+> Simple example: let's imagine our company is holding a conference for people in the movie rental industry. We'll have people register online beforehand and then login the day of the conference.
+
+```sql
+SELECT * FROM Registrations
+INNER JOIN Logins
+ON Registrations.name= Logins.name
+```
