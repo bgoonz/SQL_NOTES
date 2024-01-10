@@ -817,3 +817,14 @@ SELECT payment_id, payment.customer_id,first_name FROM payment
 INNER JOIN customer
 ON payment.customer_id = customer.customer_id
 ```
+
+
+---
+
+### Full Outer Join:
+- Outer Joins allow us to specify how to deal with values only present in one of the tables being joined.
+
+![Full Outer Join](./images/2023-12-12-13-58-41.png)
+
+
+![Example](./images/2023-12-12-15-19-44.png)
